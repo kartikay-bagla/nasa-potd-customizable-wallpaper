@@ -6,7 +6,7 @@ function updateImage() {
     var currDate = new Date();
     currDate.setDate(currDate.getDate() - diff);
 
-    if (currdate != prevDate) {
+    if (currDate != prevDate) {
         prevDate = currDate;
         var dd = String(currDate.getDate()).padStart(2, '0');
         var mm = String(currDate.getMonth() + 1).padStart(2, '0');
