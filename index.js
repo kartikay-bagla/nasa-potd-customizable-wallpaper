@@ -14,7 +14,7 @@ function updateImage() {
 
         currDate = yyyy + "-" + mm + "-" + dd;
 
-        var url = "http://apodapi.herokuapp.com/api?date=" + currDate;
+        var url = "https://apodapi.herokuapp.com/api?date=" + currDate;
 
         fetch(url)
             .then(resp => resp.json())
