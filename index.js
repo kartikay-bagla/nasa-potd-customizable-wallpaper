@@ -1,29 +1,16 @@
-var diff = parseInt(document.querySelector('title').text);
+const params = new URLSearchParams(window.location.search);
 
-var prevDate = null;
+const diff = params.get("diff");
+const height = parseInt(params.get("height"));
+const width = parseInt(params.get("width"));
 
-function updateImage() {
-    var currDate = new Date();
-    currDate.setDate(currDate.getDate() - diff);
+document.body.style.height = height + "px";
+document.body.style.width = width + "px";
 
-    if (currDate != prevDate) {
-        prevDate = currDate;
-        var dd = String(currDate.getDate()).padStart(2, '0');
-        var mm = String(currDate.getMonth() + 1).padStart(2, '0');
-        var yyyy = String(currDate.getFullYear());
+document.body.style.backgroundImage = "url(" + diff + ".jpg)"
 
-        currDate = yyyy + "-" + mm + "-" + dd;
+// document.getElementById("img").src = diff + ".jpg"
 
-        var url = "https://apodapi.herokuapp.com/api?date=" + currDate;
-
-        fetch(url)
-            .then(resp => resp.json())
-            .then(jsonObj => {
-                document.body.style.backgroundImage = "url(" + jsonObj["url"] + ")";
-                console.log(jsonObj["url"]);
-            });
-    }
+function timeRefresh(time) {
+    setTimeout("location.reload(true);", time);
 }
-
-updateImage();
-setTimeout(updateImage, 5000);
