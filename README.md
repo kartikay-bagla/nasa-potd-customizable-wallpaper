@@ -24,3 +24,6 @@ monitor's height and width for `[height]` and `[width]`:
    ```
    file:///location/of/repository/day.html?diff=[offset]&height=[height]&width=[width]
    ```
+
+Final Results:
+![Screenshot_20210923_043900](https://user-images.githubusercontent.com/19384906/134433664-696068fa-4034-46af-af3a-c296d6563235.png)
